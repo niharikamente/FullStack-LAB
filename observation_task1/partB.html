@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ================= PART B: TABLES AND IMAGES ================= -->
+    <section id="students">
+      <h2>Student Details</h2>
+      <table border="1" cellpadding="8">
+        <!-- <table> holds tabular data. border and cellpadding are only
+             for visibility while learning — real projects use CSS instead -->
+        <tr>
+          <!-- <tr> = Table Row -->
+          <th>Roll No</th>
+          <!-- <th> = Table Header cell — bold and centered by default,
+                 used only in the first row to label columns -->
+          <th>Name</th>
+          <th>Branch</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td>101</td>
+          <!-- <td> = Table Data cell — holds the actual values -->
+          <td>Niharika</td>
+          <td>CSE</td>
+          <td>niharika@example.com</td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Saranya</td>
+          <td>ECE</td>
+          <td>sara@example.com</td>
+        </tr>
+        <tr>
+          <td>103</td>
+          <td>Divya</td>
+          <td>Chemical</td>
+          <td>divya@example.com</td>
+        </tr>
+      </table>
+
+      <h2>College Logo &amp; Campus</h2>
+      <img src="logo.png" alt="ABC Engineering College Logo" width="120" />
+      <!-- alt is NOT just decoration — it's what shows up if the image
+         fails to load, and what a screen reader speaks aloud for
+         visually impaired users. It should always describe the image. -->
+      <img
+        src="campus.jpg"
+        alt="Aerial view of ABC Engineering College campus"
+        width="300"
+      />
+    </section>
+  </body>
+</html>

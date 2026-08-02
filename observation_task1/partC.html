@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- ================= PART C: STUDENT REGISTRATION FORM ================= -->
+<section id="register">
+    <h2>Student Registration Form</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text" name="sname" required><br><br>
+        <!-- "required" is HTML5 built-in validation — the browser itself
+             blocks submission if this field is left empty, no JS needed -->
+
+        <label>Email:</label>
+        <input type="email" name="semail" required><br><br>
+        <!-- type="email" checks that the text looks like a valid email
+             (has an @ and a domain) before allowing submission -->
+
+        <label>Password:</label>
+        <input type="password" name="spass" required><br><br>
+        <!-- type="password" hides the typed characters as dots -->
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+        <!-- Both radios share name="gender" — that's what links them
+             together as ONE group, so only one can ever be selected -->
+
+        <label>Hobbies:</label>
+        <input type="checkbox" name="hobby" value="Reading"> Reading
+        <input type="checkbox" name="hobby" value="Sports"> Sports<br><br>
+        <!-- Checkboxes work independently of each other, so ticking one
+             does NOT untick the other — multiple selections are allowed -->
+
+        <label>Branch:</label>
+        <select name="branch">
+            <!-- <select> + <option> = a dropdown menu, saves screen space
+                 compared to listing all choices as radio buttons -->
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="MECH">MECH</option>
+            <option value="CHEM">Chemical</option>
+        </select><br><br>
+
+        <label>Comments:</label><br>
+        <textarea rows="4" cols="30"></textarea><br><br>
+        <!-- <textarea> allows multi-line free text, unlike <input type="text">
+             which only allows a single line -->
+
+        <input type="submit" value="Submit">
+        <!-- Sends all form data (to a server, in a real app) -->
+        <input type="reset" value="Reset">
+        <!-- Clears every field back to its original blank/default state -->
+    </form>
+</section> 
+</body>
+</html>

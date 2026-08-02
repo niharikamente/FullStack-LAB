@@ -1,0 +1,39 @@
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px; 
+    /* margin: 0px;
+    padding: 0px; */
+    }
+#main-nav {
+    background-color: #0f2133;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    }
+
+.feature-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 10px;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.05);
+    }
+
+.btn-primary {
+    background-color: #1987cf;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    }
+a{
+    color:black;
+}    
+
+a:visited{
+    color:rgb(80, 95, 180)
+}

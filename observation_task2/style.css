@@ -1,0 +1,95 @@
+/* ================= HEADER ================= */
+.site-header {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  /* linear-gradient() blends two colors smoothly into one another,
+     instead of the header being one flat, boring color */
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  /* font-family sets the TYPEFACE — a different, more modern
+     font than the browser's plain default */
+  font-size: 28px;
+  text-align: center;
+  padding: 20px;
+  /* padding here pushes the text away from the header's own edges,
+     so the text isn't jammed right against the border */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  /* text-shadow draws a soft shadow BEHIND the letters,
+     making white text stand out more against the gradient */
+}
+
+/* ================= NAVIGATION BAR ================= */
+.navbar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar a {
+  color: #333;
+  margin: 0 15px;
+  /* margin here creates gaps BETWEEN each link, since margin is
+     space OUTSIDE an element, pushing neighbours away */
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Georgia, serif;
+  /* a different font family used here vs. the header,
+     to satisfy "different font families and sizes" */
+}
+
+.navbar a:hover {
+  color: #ff6600;
+  /* :hover = a pseudo-class, styles applied ONLY while the
+     mouse pointer is over the link — this is the "hover effect" */
+}
+
+/* ================= CONTENT CARDS ================= */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px;
+}
+
+.card {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  /* border is part of the box's own outline — takes up layout space */
+  border-radius: 12px;
+  /* border-radius rounds off the sharp corners of the box */
+  padding: 20px;
+  /* padding here creates space INSIDE the card, between its
+     border and the heading/paragraph/button inside it */
+  width: 150px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  /* box-shadow adds a soft shadow around the whole card,
+     giving it a slight "lifted off the page" depth effect */
+  text-align: center;
+}
+
+/* ================= BUTTON ================= */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4facfe;
+  color: white;
+  cursor: pointer;
+  /* cursor:pointer changes the mouse icon to a hand,
+     signalling "this is clickable" */
+}
+
+button:hover {
+  background-color: #0077cc;
+  /* hover effect: background color changes when the mouse is over it */
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  /* margin-top pushes the footer away from whatever content
+     is above it, keeping the layout from feeling cramped */
+}

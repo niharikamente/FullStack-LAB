@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Declares this as an HTML5 document -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Information Portal</title>
+</head>
+<body>
+
+<section id="about">
+    <p>Welcome to our college portal. ABC Engineering College<sup>&reg;</sup> 
+       <!-- <sup> raises text above the line — used here for the ® symbol,
+            which is always written slightly higher than normal text -->
+       was established in 1998 and offers <b>quality education</b>,
+       <!-- <b> makes text bold, just to highlight a keyword -->
+       <i>modern infrastructure</i>, and <u>excellent placements</u>.
+       <!-- <i> italicizes, <u> underlines — pure text formatting, 
+            no real "meaning" attached, just visual style -->
+       The college is currently ranked 3<sup>rd</sup> among private engineering
+       <!-- <sup> again — this time for the ordinal suffix "rd" in "3rd",
+            which is always written smaller and raised in real writing -->
+       colleges in the state.
+    </p>
+
+    <h2 id="courses">Courses Offered</h2>
+    <!-- Ordered list: sequence/ranking matters here (as displayed on the
+         admission brochure, courses are listed in order of intake priority) -->
+    <ol>
+        <!-- <ol> = Ordered List. Browser numbers items automatically (1,2,3...) -->
+        <li>Computer Science Engineering</li>
+        <li>Electronics Engineering</li>
+        <li>Mechanical Engineering</li>
+        <li>Chemical Engineering</li>
+    </ol>
+
+    <h2>Facilities</h2>
+    <!-- Unordered list: no ranking implied, just a set of facilities -->
+    <ul>
+        <!-- <ul> = Unordered List. Browser just adds bullet points, no numbering -->
+        <li>Central Library</li>
+        <li>Sports Complex</li>
+        <li>Hostel</li>
+        <li>Chemistry Laboratory</li>
+    </ul>
+
+    <p>In the Chemistry Laboratory, Chemical Engineering students carry out
+       experiments involving compounds such as H<sub>2</sub>SO<sub>4</sub>
+       <!-- <sub> lowers text below the line — needed here because chemical
+            formula numbers are always written smaller and below the letter -->
+       (sulphuric acid titrations) and study the behaviour of gases such as
+       CO<sub>2</sub>, as part of their core lab curriculum.</p>
+
+    <p><small><sup>1</sup>As per the State Engineering Colleges Ranking
+       <!-- <small> makes footnote-style text smaller, and <sup> marks the
+            "1" as a footnote reference number, same idea as in a printed book -->
+       Survey, 2025.</small></p>
+
+    <p>
+        <a href="https://www.college-example.edu" target="_blank">Visit College Website</a> |
+        <!-- <a href="..."> creates a clickable link.
+             target="_blank" makes it open in a NEW browser tab
+             instead of navigating away from the current page -->
+        <a href="https://www.google.com" target="_blank">Google</a>
+    </p>
+</section>
+</body>
+</html>
