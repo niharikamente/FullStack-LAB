@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- Declares this as an HTML5 document -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Information Portal</title>
+</head>
+<body>
+
+<!-- ================= PART A: TEXT FORMATTING, LISTS & LINKS ================= -->
+<section id="about">
+    <p>Welcome to our college portal. ABC Engineering College<sup>&reg;</sup> 
+       <!-- <sup> raises text above the line — used here for the ® symbol,
+            which is always written slightly higher than normal text -->
+       was established in 1998 and offers <b>quality education</b>,
+       <!-- <b> makes text bold, just to highlight a keyword -->
+       <i>modern infrastructure</i>, and <u>excellent placements</u>.
+       <!-- <i> italicizes, <u> underlines — pure text formatting, 
+            no real "meaning" attached, just visual style -->
+       The college is currently ranked 3<sup>rd</sup> among private engineering
+       <!-- <sup> again — this time for the ordinal suffix "rd" in "3rd",
+            which is always written smaller and raised in real writing -->
+       colleges in the state.
+    </p>
+
+    <h2 id="courses">Courses Offered</h2>
+    <!-- Ordered list: sequence/ranking matters here (as displayed on the
+         admission brochure, courses are listed in order of intake priority) -->
+    <ol>
+        <!-- <ol> = Ordered List. Browser numbers items automatically (1,2,3...) -->
+        <li>Computer Science Engineering</li>
+        <li>Electronics Engineering</li>
+        <li>Mechanical Engineering</li>
+        <li>Chemical Engineering</li>
+    </ol>
+
+    <h2>Facilities</h2>
+    <!-- Unordered list: no ranking implied, just a set of facilities -->
+    <ul>
+        <!-- <ul> = Unordered List. Browser just adds bullet points, no numbering -->
+        <li>Central Library</li>
+        <li>Sports Complex</li>
+        <li>Hostel</li>
+        <li>Chemistry Laboratory</li>
+    </ul>
+
+    <p>In the Chemistry Laboratory, Chemical Engineering students carry out
+       experiments involving compounds such as H<sub>2</sub>SO<sub>4</sub>
+       <!-- <sub> lowers text below the line — needed here because chemical
+            formula numbers are always written smaller and below the letter -->
+       (sulphuric acid titrations) and study the behaviour of gases such as
+       CO<sub>2</sub>, as part of their core lab curriculum.</p>
+
+    <p><small><sup>1</sup>As per the State Engineering Colleges Ranking
+       <!-- <small> makes footnote-style text smaller, and <sup> marks the
+            "1" as a footnote reference number, same idea as in a printed book -->
+       Survey, 2025.</small></p>
+
+    <p>
+        <a href="https://www.college-example.edu" target="_blank">Visit College Website</a> |
+        <!-- <a href="..."> creates a clickable link.
+             target="_blank" makes it open in a NEW browser tab
+             instead of navigating away from the current page -->
+        <a href="https://www.google.com" target="_blank">Google</a>
+    </p>
+</section>
+
+<!-- ================= PART B: TABLES AND IMAGES ================= -->
+<section id="students">
+    <h2>Student Details</h2>
+    <table border="1" cellpadding="8">
+        <!-- <table> holds tabular data. border and cellpadding are only
+             for visibility while learning — real projects use CSS instead -->
+        <tr>
+            <!-- <tr> = Table Row -->
+            <th>Roll No</th>
+            <!-- <th> = Table Header cell — bold and centered by default,
+                 used only in the first row to label columns -->
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <!-- <td> = Table Data cell — holds the actual values -->
+            <td>Niharika</td>
+            <td>CSE</td>
+            <td>niharika@example.com</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Saranya</td>
+            <td>ECE</td>
+            <td>sara@example.com</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>Divya</td>
+            <td>Chemical</td>
+            <td>divya@example.com</td>
+        </tr>
+    </table>
+
+    <h2>College Logo &amp; Campus</h2>
+    <img src="logo.png" alt="ABC Engineering College Logo" width="120">
+    <!-- alt is NOT just decoration — it's what shows up if the image
+         fails to load, and what a screen reader speaks aloud for
+         visually impaired users. It should always describe the image. -->
+    <img src="campus.jpg" alt="Aerial view of ABC Engineering College campus" width="300">
+</section>
+
+<!-- ================= PART C: STUDENT REGISTRATION FORM ================= -->
+<section id="register">
+    <h2>Student Registration Form</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text" name="sname" required><br><br>
+        <!-- "required" is HTML5 built-in validation — the browser itself
+             blocks submission if this field is left empty, no JS needed -->
+
+        <label>Email:</label>
+        <input type="email" name="semail" required><br><br>
+        <!-- type="email" checks that the text looks like a valid email
+             (has an @ and a domain) before allowing submission -->
+
+        <label>Password:</label>
+        <input type="password" name="spass" required><br><br>
+        <!-- type="password" hides the typed characters as dots -->
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+        <!-- Both radios share name="gender" — that's what links them
+             together as ONE group, so only one can ever be selected -->
+
+        <label>Hobbies:</label>
+        <input type="checkbox" name="hobby" value="Reading"> Reading
+        <input type="checkbox" name="hobby" value="Sports"> Sports<br><br>
+        <!-- Checkboxes work independently of each other, so ticking one
+             does NOT untick the other — multiple selections are allowed -->
+
+        <label>Branch:</label>
+        <select name="branch">
+            <!-- <select> + <option> = a dropdown menu, saves screen space
+                 compared to listing all choices as radio buttons -->
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="MECH">MECH</option>
+            <option value="CHEM">Chemical</option>
+        </select><br><br>
+
+        <label>Comments:</label><br>
+        <textarea rows="4" cols="30"></textarea><br><br>
+        <!-- <textarea> allows multi-line free text, unlike <input type="text">
+             which only allows a single line -->
+
+        <input type="submit" value="Submit">
+        <!-- Sends all form data (to a server, in a real app) -->
+        <input type="reset" value="Reset">
+        <!-- Clears every field back to its original blank/default state -->
+    </form>
+</section>
+
+<!-- ================= PART D: HTML5 FEATURES ================= -->
+<section id="notice">
+    <!-- <section> groups related content together as one thematic block -->
+    <article>
+        <!-- <article> = content that could stand alone and still make sense
+             on its own, like a notice or a news post -->
+        <h3>Latest Notice</h3>
+        <p>Semester exams start from next month. Chemical Engineering students
+           should collect their lab coats before the practical session.</p>
+    </article>
+
+    <h2>Media</h2>
+    <audio controls src="welcome.mp3"></audio><br>
+    <!-- controls = shows the built-in play/pause/volume bar automatically,
+         no custom player needed -->
+    <video controls width="300" src="campus_tour.mp4"></video>
+
+    <h2>HTML5 Input Types</h2>
+    <form>
+        Email: <input type="email"><br>
+        Date of Birth: <input type="date"><br>
+        <!-- type="date" gives a calendar picker instead of a plain text box -->
+        Age: <input type="number" min="17" max="30"><br>
+        <!-- type="number" restricts input to numbers and can enforce a range -->
+        Favourite Color: <input type="color"><br>
+        <!-- type="color" opens a color-picker swatch -->
+        Rate our campus tour: <input type="range" min="1" max="5">
+        <!-- type="range" gives a slider instead of typing a number -->
+    </form>
+</section>
+
+<footer>
+    <!-- <footer> marks the closing section of the page, e.g. copyright info -->
+    <p>&copy; 2026 ABC Engineering College</p>
+</footer>
+</body>
+</html>

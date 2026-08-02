@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Styled Webpage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= PART A: CANVAS GRAPHICS ================= -->
+<h2>Canvas Graphics</h2>
+<canvas id="myCanvas" width="400" height="250" style="border:1px solid #000;"></canvas>
+<!-- <canvas> is just an empty rectangular box on the page.
+     Nothing is drawn yet — it has NO drawing ability of its own.
+     Everything visible inside it is drawn using JavaScript. -->
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+  // getContext("2d") gives us the "drawing tool" (called the context)
+  // that has all the draw functions like fillRect, arc, etc.
+  // Without this line, none of the drawing commands below would work.
+
+  // ---------- RECTANGLE ----------
+  ctx.fillStyle = "skyblue";
+  // fillStyle sets the COLOR used for the next shape drawn
+  ctx.fillRect(20, 20, 100, 60);
+  // fillRect(x, y, width, height)
+  // x,y = top-left corner position of the rectangle
+  // width,height = size of the rectangle
+
+  // ---------- CIRCLE ----------
+  ctx.beginPath();
+  // beginPath() starts a NEW shape — without this, the circle
+  // would connect to the previous shape's path by mistake
+  ctx.arc(220, 60, 40, 0, Math.PI * 2);
+  // arc(x, y, radius, startAngle, endAngle)
+  // 0 to Math.PI*2 means "go all the way around" = a full circle
+  ctx.fillStyle = "orange";
+  ctx.fill();
+  // fill() actually paints the shape with the current fillStyle
+
+  // ---------- LINE ----------
+  ctx.beginPath();
+  ctx.moveTo(20, 150);
+  // moveTo(x, y) moves the "pen" to a starting point WITHOUT drawing
+  ctx.lineTo(300, 150);
+  // lineTo(x, y) draws a straight line from the last point to this one
+  ctx.stroke();
+  // stroke() actually renders the line (moveTo/lineTo alone draw nothing)
+
+  // ---------- TEXT (Name) ----------
+  ctx.font = "20px Arial";
+  ctx.fillStyle = "black";
+  ctx.fillText("Niharika", 20, 200);
+  // fillText(text, x, y) — x,y is the position of the BOTTOM-LEFT
+  // of the text, not the top-left (a common beginner mistake)
+</script>
+
+<!-- ================= PART B: CSS STYLING DEMO ================= -->
+<header class="site-header">My Styled Webpage</header>
+<!-- <header> = semantic tag for the top banner section of the page -->
+
+<nav class="navbar">
+  <!-- <nav> = semantic tag telling the browser "this block is for navigation" -->
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="cards">
+  <!-- A plain <div> is used here since "cards" is just a layout
+       container, not a meaningful content type on its own -->
+  <div class="card">
+    <h3>Card 1</h3>
+    <p>Some short description text.</p>
+    <button>Learn More</button>
+  </div>
+  <div class="card">
+    <h3>Card 2</h3>
+    <p>Some short description text.</p>
+    <button>Learn More</button>
+  </div>
+  <div class="card">
+    <h3>Card 3</h3>
+    <p>Some short description text.</p>
+    <button>Learn More</button>
+  </div>
+</div>
+
+<footer class="site-footer">&copy; 2026 My Website</footer>
+</body>
+</html>
