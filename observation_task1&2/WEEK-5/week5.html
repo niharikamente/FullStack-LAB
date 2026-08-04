@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Webpage</title>
+    <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+<div class="container">
+
+    <button id="themeToggle">🌙</button>
+
+    <div class="card">
+        <h2>Interactive Counter</h2>
+        <p id="counterDisplay">0</p>
+
+        <div class="btn-group">
+            <button id="decreaseBtn">Decrease</button>
+            <button id ="reset">Reset</button>
+            <button id="increaseBtn">Increase</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Item Generator</h2>
+
+        <input type="text" id="itemInput" placeholder="Add note...">
+        <button id="addBtn">Add to List</button>
+
+        <ul id="itemList"></ul>
+    </div>
+</div>
+      <script src="script.js"></script>
+</body>
+</html>
