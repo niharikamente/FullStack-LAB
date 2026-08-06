@@ -1,6 +1,17 @@
-/* ================= HEADER ================= */
+html, body{
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background:#f5f5f5;
+}/* ================= HEADER ================= */
 .site-header {
-  background: linear-gradient(to right, #4facfe, #00f2fe);
+  background: linear-gradient(to right, #345979, #00b8c2);
   /* linear-gradient() blends two colors smoothly into one another,
      instead of the header being one flat, boring color */
   color: white;
@@ -15,6 +26,19 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   /* text-shadow draws a soft shadow BEHIND the letters,
      making white text stand out more against the gradient */
+}
+
+.canvas-section{
+    width:90%;
+    text-align:center;
+    margin:30px auto;
+}
+
+canvas{
+    width:100%;
+    max-width:500px;
+    height:350px;
+    border:2px solid black;
 }
 
 /* ================= NAVIGATION BAR ================= */
@@ -56,10 +80,11 @@
   /* border is part of the box's own outline — takes up layout space */
   border-radius: 12px;
   /* border-radius rounds off the sharp corners of the box */
-  padding: 20px;
+  padding: 30px;
   /* padding here creates space INSIDE the card, between its
      border and the heading/paragraph/button inside it */
-  width: 150px;
+  width: 300px;
+  height: 200px;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   /* box-shadow adds a soft shadow around the whole card,
      giving it a slight "lifted off the page" depth effect */
@@ -85,11 +110,12 @@ button:hover {
 
 /* ================= FOOTER ================= */
 .site-footer {
+  width: 100%;
   background-color: #222;
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: auto;
   /* margin-top pushes the footer away from whatever content
      is above it, keeping the layout from feeling cramped */
 }

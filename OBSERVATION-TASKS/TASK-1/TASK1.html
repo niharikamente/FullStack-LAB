@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College Information Portal</title>
 </head>
-<body>
+<body style="background-color: bisque;">
 
 <!-- ================= PART A: TEXT FORMATTING, LISTS & LINKS ================= -->
 <section id="about">
-     <h1>ANITS Engineering College</h1>
+     <h1 style="color: #2c3e50;">ANITS Engineering College</h1><hr>
     <p>Welcome to our college portal. ANITS Engineering College<sup>&reg;</sup> 
        <!-- <sup> raises text above the line — used here for the ® symbol,
             which is always written slightly higher than normal text -->
@@ -25,7 +25,7 @@
        colleges in the state.
     </p>
 
-    <h2 id="courses">Courses Offered</h2>
+    <h2 id="courses" style="color: #2c3e50;">Courses Offered</h2>
     <!-- Ordered list: sequence/ranking matters here (as displayed on the
          admission brochure, courses are listed in order of intake priority) -->
     <ol>
@@ -36,7 +36,7 @@
         <li>Chemical Engineering</li>
     </ol>
 
-    <h2>Facilities</h2>
+    <h2 style="color: #2c3e50;">Facilities</h2>
     <!-- Unordered list: no ranking implied, just a set of facilities -->
     <ul>
         <!-- <ul> = Unordered List. Browser just adds bullet points, no numbering -->
@@ -69,7 +69,7 @@
 
 <!-- ================= PART B: TABLES AND IMAGES ================= -->
 <section id="students">
-    <h2>Student Details</h2>
+    <h2 style="color: #2c3e50;">Student Details</h2>
     <table border="1" cellpadding="8">
         <!-- <table> holds tabular data. border and cellpadding are only
              for visibility while learning — real projects use CSS instead -->
@@ -103,7 +103,7 @@
         </tr>
     </table>
 
-    <h2>College Logo &amp; Campus</h2>
+    <h2 style="color: #2c3e50;">College Logo &amp; Campus</h2>
     <img src="logo.jpg" alt="ANITS Engineering College Logo" width="120">
     <!-- alt is NOT just decoration — it's what shows up if the image
          fails to load, and what a screen reader speaks aloud for
@@ -113,7 +113,7 @@
 
 <!-- ================= PART C: STUDENT REGISTRATION FORM ================= -->
 <section id="register">
-    <h2>Student Registration Form</h2>
+    <h2 style="color: #2c3e50;">Student Registration Form</h2>
     <form>
         <label>Name:</label>
         <input type="text" name="sname" required><br><br>
@@ -169,18 +169,18 @@
     <article>
         <!-- <article> = content that could stand alone and still make sense
              on its own, like a notice or a news post -->
-        <h3>Latest Notice</h3>
+        <h2 style="color: #2c3e50;"><i>Latest Notice</i></h2>
         <p>Semester exams start from next month. Chemical Engineering students
            should collect their lab coats before the practical session.</p>
     </article>
 
-    <h2>Media</h2>
+    <h2 style="color: #2c3e50;">Media</h2>
     <audio controls src="welcome.mp3"></audio><br>
     <!-- controls = shows the built-in play/pause/volume bar automatically,
          no custom player needed -->
     <video controls width="300" src="campus_tour.mp4"></video>
 
-    <h2>HTML5 Input Types</h2>
+    <h2 style="color: #2c3e50;">HTML5 Input Types</h2>
     <form>
         Email: <input type="email"><br>
         Date of Birth: <input type="date"><br>
