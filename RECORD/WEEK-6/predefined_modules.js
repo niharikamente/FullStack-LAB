@@ -3,6 +3,9 @@ const path = require('path');
 const dns = require('dns');
 const net = require('net');
 const { promisify } = require('util');
+const fs = require('fs');
+
+fs.writeFileSync('test.txt', 'Hello Node.js');
 
 
 const filePath = 'C:\\CSM-B-97\\FullStack-LAB\\OBSERVATION-TASKS\\TASK-1\\Task1_Observation_Document.pdf';
