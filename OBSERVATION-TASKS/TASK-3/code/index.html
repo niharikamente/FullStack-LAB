@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My To-Do List</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; padding: 40px; background: #f2f4f8; }
+  .input-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; }
+  #taskInput { padding: 10px 14px; font-size: 15px; border: 1px solid #ccc; border-radius: 6px; width: 260px; }
+  #addTaskBtn { background: #2f6fed; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+  #taskList { list-style: none; padding: 0; width: 380px; margin: 0 auto; }
+  #taskList li { display: flex; align-items: center; justify-content: space-between;
+                  background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                  padding: 10px 15px; margin-bottom: 10px; }
+  #taskList li.completed span.taskText { text-decoration: line-through; color: #999; }
+  .completeBtn { background: #2fb380; color: #fff; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; }
+  .deleteBtn { background: #e5533d; color: #fff; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; margin-left: 6px; }
+  #emptyMessage { color: #777; font-style: italic; }
+</style>
+</head>
+<body>
+
+<h1>My To-Do List</h1>
+<div class="input-row">
+  <input type="text" id="taskInput" placeholder="Enter a task...">
+  <button id="addTaskBtn">Add Task</button>
+</div>
+<ul id="taskList"></ul>
+<p id="emptyMessage">No tasks available.</p>
+
+<script src="script.js"></script>
+</body>
+</html>
