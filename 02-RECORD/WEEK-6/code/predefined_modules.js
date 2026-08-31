@@ -1,56 +1,62 @@
-const os =  require('os');
+const os = require('os');
 const path = require('path');
 const dns = require('dns');
 const net = require('net');
-const { promisify } = require('util');
 const fs = require('fs');
+
+// ==================== FILE SYSTEM MODULE ====================
 
 fs.writeFileSync('test.txt', 'Hello Node.js');
 
 
-const filePath = 'C:\\CSM-B-97\\FullStack-LAB\\OBSERVATION-TASKS\\TASK-1\\Task1_Observation_Document.pdf';
-const newPath = path.join(__dirname, 'data', 'config.json');//constructs a path as a string by combining different path parts correctly
+// ==================== PATH VARIABLES ====================
 
-//OS (Operating System) Module
+const filePath =
+    'C:\\CSM-B-97\\FullStack-LAB\\OBSERVATION-TASKS\\TASK-1\\Task1_Observation_Document.pdf';
+
+const newPath = path.join(__dirname, 'data', 'config.json');
+
+
+// ==================== OS MODULE ====================
+
 console.log(newPath);
+
 console.log('Operating System Info:');
+
 console.log(`Platform: ${os.platform()}`);
 console.log(`Architecture: ${os.arch()}`);
 console.log(`CPU Cores: ${os.cpus().length}`);
 console.log(`Total Memory: ${os.totalmem()} bytes`);
 console.log(`Free Memory: ${os.freemem()} bytes`);
-console.log(`Current User: `,os.userInfo());
+console.log('Current User:', os.userInfo());
 
-//Path Module
+
+// ==================== PATH MODULE ====================
+
 console.log('Path Info:');
+
 console.log(`Directory Name: ${path.dirname(filePath)}`);
-console.log(`File Name: ${path.basename(filePath)}`);//Returns the filename
+console.log(`File Name: ${path.basename(filePath)}`);
 console.log(`File Extension: ${path.extname(filePath)}`);
 console.log(`Joined Path: ${newPath}`);
 
 
 // ==================== DNS MODULE ====================
 
-// Convert callback functions into Promise functions
-const lookup = promisify(dns.lookup);
-const resolve4 = promisify(dns.resolve4);
+dns.lookup('google.com', (err, address, family) => {
 
-async function startProgram() {
+    if (err) {
+        console.log('DNS Lookup Error:', err.message);
+        return;
+    }
 
-    console.log('\nDNS Info:');
+    console.log('DNS Info:');
+    console.log(`IP Address: ${address}`);
+    console.log(`IP Family: ${family}`);
+});
 
-    // lookup()
-    const result = await lookup('google.com');
 
-    console.log(`IP Address: ${result.address}`);
-    console.log(`IP Family: ${result.family}`);
-
-    // resolve4()
-    const addresses = await resolve4('google.com');
-
-    console.log('IPv4 Addresses:', addresses);
-
- // ==================== NET MODULE ====================
+// ==================== NET MODULE ====================
 
 const server = net.createServer((socket) => {
 
@@ -68,9 +74,8 @@ const server = net.createServer((socket) => {
 
 });
 
+
+// Start server
 server.listen(3000, () => {
     console.log('Server listening on port 3000.');
 });
-}
-
-startProgram();
