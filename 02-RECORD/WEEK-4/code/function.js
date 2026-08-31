@@ -12,10 +12,22 @@ function add(a,b){
 }
 console.log(add(10,30));
 
-// arrow function
+//arrow function without parameters
+const greet1 = () => {
+    console.log("Hello World");
+};
+greet1();
 
-const addition = (a, b) => a + b;
-console.log(addition(30,30));
+//arrow function with 1 parameter
+const square = num => num * num;
+console.log(`Square of ${5} is ${square(5)}`);
+
+//arrow function with multiple parameters
+const add1 = (a, b) => {
+    return a + b;
+};
+
+console.log(`Sum of 10 & 20 is ${add1(10, 20)}`);
 
 //anonymous function
 
@@ -62,3 +74,4 @@ good("John", () => {
 setTimeout(function() {
     console.log("Hello after 2 seconds");
 }, 2000);
+
