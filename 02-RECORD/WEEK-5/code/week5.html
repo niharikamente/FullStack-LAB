@@ -3,34 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Webpage</title>
-    <link rel="stylesheet" href="style.css">  
+
+    <title>Gradient Generator</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="container">
 
-    <button id="themeToggle">🌙</button>
+    <div class="container">
 
-    <div class="card">
-        <h2>Interactive Counter</h2>
-        <p id="counterDisplay">0</p>
+        <h1>🎨 Gradient Generator</h1>
+        <p>Create your own beautiful gradient!</p>
 
-        <div class="btn-group">
-            <button id="decreaseBtn">Decrease</button>
-            <button id ="reset">Reset</button>
-            <button id="increaseBtn">Increase</button>
+        <div class="colors">
+
+            <div>
+                <label>Color 1</label>
+                <input type="color" id="color1" value="#ff6b6b">
+            </div>
+
+            <div>
+                <label>Color 2</label>
+                <input type="color" id="color2" value="#4ecdc4">
+            </div>
+
         </div>
+
+        <div class="buttons">
+            <button id="generateBtn">
+                Generate Gradient
+            </button>
+
+            <button id="randomBtn">
+                🎲 Random Gradient
+            </button>
+        </div>
+
+        <div id="preview"></div>
+
+        <h3>CSS Code</h3>
+
+        <div class="code-box">
+            <p id="cssCode">
+                linear-gradient(to right, #ff6b6b, #4ecdc4)
+            </p>
+
+            <button id="copyBtn">📋 Copy CSS</button>
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>Item Generator</h2>
+    <script src="script.js"></script>
 
-        <input type="text" id="itemInput" placeholder="Add note...">
-        <button id="addBtn">Add to List</button>
-
-        <ul id="itemList"></ul>
-    </div>
-</div>
-      <script src="script.js"></script>
 </body>
 </html>
