@@ -1,163 +1,158 @@
-
 // 1. SINGLE INHERITANCE
+// Real-time Example: Employee -> Manager
 
+console.log("1. SINGLE INHERITANCE");
 
-console.log("Single Inheritance");
-
-class Animal {
-    eat() {
-        console.log("Animal is eating.");
+class Employee {
+    work() {
+        console.log("Employee is working.");
     }
 }
 
-class Dog extends Animal {
-    bark() {
-        console.log("Dog is barking.");
+class Manager extends Employee {
+    manageTeam() {
+        console.log("Manager is managing the team.");
     }
 }
 
-let dog = new Dog();
-dog.eat();
-dog.bark();
+let manager = new Manager();
 
-
+manager.work();
+manager.manageTeam();
 
 // 2. MULTILEVEL INHERITANCE
+// Real-time Example: Person -> Employee -> Developer
 
+console.log("\n2. MULTILEVEL INHERITANCE");
 
-console.log("\nMultilevel Inheritance");
-
-class Animal2 {
-    eat() {
-        console.log("Animal is eating.");
+class Person {
+    introduce() {
+        console.log("I am a person.");
     }
 }
 
-class Dog2 extends Animal2 {
-    bark() {
-        console.log("Dog is barking.");
+class Employee2 extends Person {
+    work() {
+        console.log("Employee is working.");
     }
 }
 
-class Puppy extends Dog2 {
-    play() {
-        console.log("Puppy is playing.");
+class Developer extends Employee2 {
+    writeCode() {
+        console.log("Developer is writing code.");
     }
 }
 
-let puppy = new Puppy();
-puppy.eat();
-puppy.bark();
-puppy.play();
+let developer = new Developer();
 
-
+developer.introduce();
+developer.work();
+developer.writeCode();
 
 // 3. HIERARCHICAL INHERITANCE
+// Real-time Example: Vehicle -> Car / Bike
 
+console.log("\n3. HIERARCHICAL INHERITANCE");
 
-console.log("\nHierarchical Inheritance");
-
-class Animal3 {
-    eat() {
-        console.log("Animal is eating.");
+class Vehicle {
+    start() {
+        console.log("Vehicle is starting.");
     }
 }
 
-class Dog3 extends Animal3 {
-    bark() {
-        console.log("Dog is barking.");
+class Car extends Vehicle {
+    drive() {
+        console.log("Car is driving.");
     }
 }
 
-class Cat extends Animal3 {
-    meow() {
-        console.log("Cat is meowing.");
+class Bike extends Vehicle {
+    ride() {
+        console.log("Bike is being ridden.");
     }
 }
 
-let dog3 = new Dog3();
-let cat = new Cat();
+let car = new Car();
+let bike = new Bike();
 
-dog3.eat();
-dog3.bark();
+car.start();
+car.drive();
 
-cat.eat();
-cat.meow();
-
-
+bike.start();
+bike.ride();
 
 // 4. MULTIPLE INHERITANCE
 // Using Mixins
+// Real-time Example: SmartPhone
 
+console.log("\n4. MULTIPLE INHERITANCE");
 
-console.log("\nMultiple Inheritance");
-
-const Flying = {
-    fly() {
-        console.log("Flying.");
+const Camera = {
+    takePhoto() {
+        console.log("Smartphone is taking a photo.");
     }
 };
 
-const Swimming = {
-    swim() {
-        console.log("Swimming.");
+const MusicPlayer = {
+    playMusic() {
+        console.log("Smartphone is playing music.");
     }
 };
 
-class Duck {
-    quack() {
-        console.log("Duck is quacking.");
+class Smartphone {
+    makeCall() {
+        console.log("Smartphone is making a call.");
     }
 }
 
-// Add both Flying and Swimming features
-Object.assign(Duck.prototype, Flying, Swimming);
+// Adding features from both Camera and MusicPlayer
+Object.assign(Smartphone.prototype, Camera, MusicPlayer);
 
-let duck = new Duck();
+let phone = new Smartphone();
 
-duck.quack();
-duck.fly();
-duck.swim();
-
-
+phone.makeCall();
+phone.takePhoto();
+phone.playMusic();
 
 // 5. HYBRID INHERITANCE
+// Combination of inheritance + mixins
+// Real-time Example: Company Employees
 
+console.log("\n5. HYBRID INHERITANCE");
 
-console.log("\nHybrid Inheritance");
-
-class Animal4 {
-    eat() {
-        console.log("Animal is eating.");
+class Employee3 {
+    login() {
+        console.log("Employee logged into the company system.");
     }
 }
 
-class Dog4 extends Animal4 {
-    bark() {
-        console.log("Dog is barking.");
+class Developer2 extends Employee3 {
+    writeCode() {
+        console.log("Developer is writing code.");
     }
 }
 
-class Cat4 extends Animal4 {
-    meow() {
-        console.log("Cat is meowing.");
+class Tester extends Employee3 {
+    testSoftware() {
+        console.log("Tester is testing the software.");
     }
 }
 
-const Running = {
-    run() {
-        console.log("Running.");
+const RemoteWork = {
+    workFromHome() {
+        console.log("Employee is working from home.");
     }
 };
 
-Object.assign(Dog4.prototype, Running);
+// Developer gets RemoteWork feature
+Object.assign(Developer2.prototype, RemoteWork);
 
-let dog4 = new Dog4();
-let cat4 = new Cat4();
+let developer2 = new Developer2();
+let tester = new Tester();
 
-dog4.eat();
-dog4.bark();
-dog4.run();
+developer2.login();
+developer2.writeCode();
+developer2.workFromHome();
 
-cat4.eat();
-cat4.meow();
+tester.login();
+tester.testSoftware();
