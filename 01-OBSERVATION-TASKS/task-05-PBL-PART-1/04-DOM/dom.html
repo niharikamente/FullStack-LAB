@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Demonstration</title>
+</head>
+
+<body>
+
+    <h1 id="heading">Welcome to DOM</h1>
+
+    <p id="message">
+        This is the original paragraph.
+    </p>
+
+    <button id="changeButton">
+        Change Content
+    </button>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const message = document.getElementById("message");
+        const button = document.getElementById("changeButton");
+
+        button.addEventListener("click", function () {
+
+            // Change HTML content
+            heading.textContent = "DOM Content Changed";
+
+            message.textContent =
+                "JavaScript dynamically modified this paragraph.";
+
+            // Change style
+            heading.style.color = "blue";
+            heading.style.backgroundColor = "lightgray";
+            heading.style.padding = "10px";
+
+            // Change an attribute
+            heading.setAttribute("title", "This is a modified heading");
+        });
+    </script>
+
+</body>
+</html>
