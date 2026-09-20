@@ -1,0 +1,72 @@
+// Import built-in modules
+const os = require("os");
+const path = require("path");
+const fs = require("fs");
+
+
+// -------------------------
+// 1. OS MODULE
+// -------------------------
+
+console.log("===== OS MODULE =====");
+
+console.log("Operating System:", os.platform());
+console.log("CPU Architecture:", os.arch());
+console.log("Number of CPUs:", os.cpus().length);
+console.log("Home Directory:", os.homedir());
+
+
+// -------------------------
+// 2. PATH MODULE
+// -------------------------
+
+console.log("\n===== PATH MODULE =====");
+
+const filePath = path.join(
+    __dirname,
+    "data",
+    "student.txt"
+);
+
+console.log("Complete Path:", filePath);
+console.log("File Name:", path.basename(filePath));
+console.log("Directory:", path.dirname(filePath));
+console.log("Extension:", path.extname(filePath));
+
+
+// -------------------------
+// 3. FS MODULE
+// -------------------------
+
+console.log("\n===== FS MODULE =====");
+
+const fileName = "example.txt";
+const content = "Hello from Node.js File System module!";
+
+// Create/write a file
+fs.writeFileSync(fileName, content);
+
+console.log("File created successfully.");
+
+// Read the file
+const fileData = fs.readFileSync(fileName, "utf8");
+
+console.log("File contents:");
+console.log(fileData);
+
+// Append content
+fs.appendFileSync(
+    fileName,
+    "\nThis is additional content."
+);
+
+console.log("Content appended successfully.");
+
+// Read final content
+const finalData = fs.readFileSync(
+    fileName,
+    "utf8"
+);
+
+console.log("\nFinal file contents:");
+console.log(finalData);
