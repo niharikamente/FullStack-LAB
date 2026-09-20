@@ -1,1 +1,3 @@
-# Empty - using Git LFS for large files
+# Dependencies
+node_modules/
+
