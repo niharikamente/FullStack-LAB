@@ -20,8 +20,10 @@ function App() {
       <p>Name: {name}</p>
       <p>Age: {age}</p>
       <p>Department: {department}</p>
+      <div className="image-container">
       <img src={studentImage} alt="Student" width="200" height="200" />
       <img src={imageUrl} alt="Teacher" width="200" height="200" />
+      </div>
       <button onClick={showMessage}>Click Me</button>
     </>
   );
