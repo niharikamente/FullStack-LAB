@@ -2,6 +2,12 @@ import studentImage from "./assets/student.png";
 import "./App.css";
 
 function App() {
+
+  const headingStyle = {
+        color: "blue",
+        fontSize: "50px"
+    };
+
   const name = "Niharika";
     const age = 19;
     const department = "CSM";
@@ -13,18 +19,32 @@ function App() {
     }
 
   return (
-    <>
-      <h1 className="heading">Welcome to React</h1>
+    // JSX Fragment--allows to group multiple JSX elements
 
-      <h2>Student Information</h2>
-      <p>Name: {name}</p>
-      <p>Age: {age}</p>
-      <p>Department: {department}</p>
+    <>
+      <h1 style={headingStyle} tabIndex={0}>Welcome to React</h1>
+
+      {/* JSX with JavaScript Variables */}
+
+      <h2 tabIndex={0}>Student Information</h2>
+      <p tabIndex={0}>Name: {name}</p>
+      <p tabIndex={0}>Age: {age}</p>
+      <p tabIndex={0}>Department: {department}</p>
+
+      {/* className in JSX */}
+
       <div className="image-container">
+
+      {/* JSX Attributes */}
+
       <img src={studentImage} alt="Student" width="200" height="200" />
+
+      {/* JSX Attributes with JavaScript Values */}\
+
       <img src={imageUrl} alt="Teacher" width="200" height="200" />
       </div>
-      <button onClick={showMessage}>Click Me</button>
+      {/* JSX Events */}
+      <button tabIndex={0} onClick={showMessage}>Click Me</button>
     </>
   );
 }
