@@ -1,59 +1,56 @@
 import {
-    BrowserRouter,
-    Routes,
-    Route,
-    Link
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
 } from "react-router-dom";
 
-function Home() {
-    return <h1>Home Page</h1>;
-}
-
-function About() {
-    return <h1>About Page</h1>;
-}
-
-function Contact() {
-    return <h1>Contact Page</h1>;
-}
+import Home from "./components/Home";
+import Students from "./components/Students";
+import Courses from "./components/Courses";
+import Student from "./components/Student";
 
 function App() {
 
-    return (
+  return (
+    <BrowserRouter>
 
-        <BrowserRouter>
+      <nav>
 
-            <nav>
+        <Link to="/">Home</Link>{" | "}
 
-                <Link to="/">Home</Link>{" | "}
+        <Link to="/students">Students</Link>{" | "}
 
-                <Link to="/about">About</Link>{" | "}
+        <Link to="/courses">Courses</Link>{" | "}
 
-                <Link to="/contact">Contact</Link>
+      </nav>
 
-            </nav>
+      <Routes>
 
-            <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
-                <Route
-                    path="/"
-                    element={<Home />}
-                />
+        <Route
+          path="/students"
+          element={<Students />}
+        />
 
-                <Route
-                    path="/about"
-                    element={<About />}
-                />
+        <Route
+          path="/courses"
+          element={<Courses />}
+        />
 
-                <Route
-                    path="/contact"
-                    element={<Contact />}
-                />
+        <Route
+          path="/students/:id"
+          element={<Student />}
+        />
 
-            </Routes>
+      </Routes>
 
-        </BrowserRouter>
-    );
+    </BrowserRouter>
+  );
 }
 
 export default App;
