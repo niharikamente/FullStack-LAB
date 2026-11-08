@@ -1,4 +1,4 @@
-# Student Management System — Starter
+# Student Management System 
 
 A minimal full-stack starter with a React frontend and an Express.js API. The frontend reads its backend URL from configuration, so it can point to a local or deployed API.
 
