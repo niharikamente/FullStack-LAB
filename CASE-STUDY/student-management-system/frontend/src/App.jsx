@@ -28,7 +28,7 @@ export default function App() {
       setStudents(data);
       setError('');
     } catch {
-      setError('Could not load students. Check that the backend API is running on port 5000.');
+      setError(`Could not connect to backend API (${API_URL}). Check that the backend is running and CORS is allowed.`);
     } finally {
       setLoading(false);
     }

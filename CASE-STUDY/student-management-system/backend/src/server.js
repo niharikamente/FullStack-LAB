@@ -23,7 +23,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
-  process.env.FRONTEND_ORIGIN,
+  process.env.FRONTEND_ORIGIN?.replace(/\/$/, ''),
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:5174',
@@ -33,11 +33,22 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+      // Allow requests with no origin (e.g. mobile apps, curl, or server checks)
+      if (!origin) return callback(null, true);
+
+      // Allow all in development or if FRONTEND_ORIGIN is not explicitly configured
+      if (process.env.NODE_ENV !== 'production' || !process.env.FRONTEND_ORIGIN) {
         return callback(null, true);
       }
-      return callback(new Error('Not allowed by CORS'));
+
+      // Allow explicit origin or any Vercel preview/production deployment
+      if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+        return callback(null, true);
+      }
+
+      return callback(null, false);
     },
+    credentials: true,
   })
 );
 
@@ -86,6 +97,18 @@ mongoose.connection.on('disconnected', () => {
 
 mongoose.connection.on('connected', () => {
   isDbConnected = true;
+});
+
+// Root route for sanity check
+app.get('/', (_req, res) => {
+  res.json({
+    message: 'Student Management System API',
+    database: isDbConnected ? 'MongoDB Atlas' : 'in-memory-fallback',
+    endpoints: {
+      health: '/api/health',
+      students: '/api/students',
+    },
+  });
 });
 
 // Health check
