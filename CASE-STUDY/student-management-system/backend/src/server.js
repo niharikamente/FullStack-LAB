@@ -189,6 +189,31 @@ app.delete('/api/students/:id', async (req, res) => {
 
 connectDB();
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Student API listening on port ${port}`);
 });
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`❌ Port ${port} is already in use.`);
+    console.error(`👉 Close the process currently using port ${port} or choose another port in .env.`);
+    process.exit(1);
+  } else {
+    console.error('Server error:', err);
+  }
+});
+
+const handleShutdown = () => {
+  console.log('\nShutting down server gracefully...');
+  server.close(async () => {
+    try {
+      await mongoose.connection.close(false);
+    } catch {
+      // ignore close errors during exit
+    }
+    process.exit(0);
+  });
+};
+
+process.on('SIGINT', handleShutdown);
+process.on('SIGTERM', handleShutdown);
